@@ -2,7 +2,7 @@
 
 <img src="./img/logo.png" width="300">
 
-## Mise en place
+## Mise en place de jsPDF
 
 ### :one: Importer le CDN de jsPDF
 ```html
@@ -41,23 +41,16 @@ const doc = new jsPDF( orientation: 'p',unit: 'mm', format: 'a4');
 ```
 |les termes| les valeurs par default|les valeurs|
 |---|---|---|
-|orientation|**p**|Orientation du document. Les valeurs possible sont "**portrait**" ou "**landscape**" (ou les raccourcis "**p**" or "**l**").|
-|unit| **mm**|Unité de mesure pour le coordonnées en X et Y ainsi que les dimmensions.
-Les valeurs possible sont "**pt**" (points), "**mm**", "**cm**", "**m**", "**in**" ou "**px**".|
-|format| **a4** | 
-- a0 - a10
-- b0 - b10
-- c0 - c10
-- dl
-- letter
-- government-letter
-- legal
-- junior-legal
-- ledger
-- tabloid
-- credit-card
+|orientation|**p**|Orientation du document. Les valeurs possibles sont "**portrait**" ou "**landscape**" (ou les raccourcis "**p**" or "**l**").|
+|unit| **mm**|Unité de mesure pour le coordonnées en X et Y ainsi que les dimmensions. Les valeurs possibles sont "**pt**" (points), "**mm**", "**cm**", "**m**", "**in**" ou "**px**".|
+|format| **a4** | Les valeurs possibles sont  a0 - a10, b0 - b10, c0 - c10, dl, letter, government-letter, legal, junior-legal, ledger, tabloid, credit-card
 |
 
+## Mise en place du texte
+
+
+
 ## Ressources et documentation officielle :
-https://github.com/parallax/jsPDF
-https://artskydj.github.io/jsPDF/docs/jsPDF.html
+
+- https://github.com/parallax/jsPDF
+- https://artskydj.github.io/jsPDF/docs/jsPDF.html
