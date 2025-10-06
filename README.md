@@ -43,12 +43,43 @@ const doc = new jsPDF( orientation: 'p',unit: 'mm', format: 'a4');
 |---|---|---|
 |orientation|**p**|Orientation du document. Les valeurs possibles sont "**portrait**" ou "**landscape**" (ou les raccourcis "**p**" or "**l**").|
 |unit| **mm**|Unité de mesure pour le coordonnées en X et Y ainsi que les dimmensions. Les valeurs possibles sont "**pt**" (points), "**mm**", "**cm**", "**m**", "**in**" ou "**px**".|
-|format| **a4** | Les valeurs possibles sont  a0 - a10, b0 - b10, c0 - c10, dl, letter, government-letter, legal, junior-legal, ledger, tabloid, credit-card
-|
+|format| **a4** | Les valeurs possibles sont  a0 - a10, b0 - b10, c0 - c10, dl, letter, government-letter, legal, junior-legal, ledger, tabloid, credit-card|
 
 ## Mise en place du texte
 
+### Définir la taille de la police de caractère ou "font"
+```js
+doc.setFontSize(40);
+```
+### Définir la couleur du texte
+en Hexadécimal
+```js
+doc.setTextColor('#444');
+```
+en RGBA
+```js
+doc.setTextColor(68,68,68);
+```
+ou bien une seule valeur si elle se répète
+```js
+doc.setTextColor(68);
+```
+### Afficher du texte
+```js
+doc.text('Hello PDF',158,40);
+```
 
+## Afficher le PDF
+Afficher une preview :
+```js
+doc.output('dataurlnewwindow'); //  data url new window
+```
+Télécharger :
+```js
+doc.save(`document.pdf`)
+```
+
+## Code complet 
 
 ## Ressources et documentation officielle :
 
