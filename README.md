@@ -1,6 +1,6 @@
 # Créer rapidement des documents PDF avec JavaScript
 
-<img src="./img/logo.png" width="300"
+<img src="./img/logo.png" width="300">
 
 ## Mise en place
 
