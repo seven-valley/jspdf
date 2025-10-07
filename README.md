@@ -92,7 +92,6 @@ doc.save(`document.pdf`)
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>
 document.getElementById('btnPDF').onclick =()=>{
-    console.log('ola');
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF({ unit: 'mm', format: 'a4' });
     doc.setFontSize(40);
