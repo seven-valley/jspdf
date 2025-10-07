@@ -93,7 +93,7 @@ doc.save(`document.pdf`)
 <script>
 document.getElementById('btnPDF').onclick =()=>{
     const { jsPDF } = window.jspdf;
-    const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+    const doc = new jsPDF();
     doc.setFontSize(40);
     doc.setTextColor('#444');
     doc.text('Facture',158,40); 
