@@ -107,15 +107,15 @@ document.getElementById('btnPDF').onclick =()=>{
 - Choisir une couleur pour la forme
 
 ```js
-pdf.setFillColor(233);
+doc.setFillColor(233);
 ```
 ou
 ```js
-pdf.setFillColor(233,233,233);
+doc.setFillColor(233,233,233);
 ```
 ou
 ```js
-pdf.setFillColor('#e9e9e9');
+doc.setFillColor('#e9e9e9');
 ```
 -----------------------------------
 - Dessiner un rectangle
@@ -125,7 +125,7 @@ pdf.setFillColor('#e9e9e9');
 - remplissage : "FD" =  (mettre un cadre et remplir)
 
 ```js
-pdf.rect(40,100,100,10,"F");
+doc.rect(40,100,100,10,"F");
 ```
 [doc](https://artskydj.github.io/jsPDF/docs/jsPDF.html#rect)
 
