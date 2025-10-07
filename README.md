@@ -170,12 +170,9 @@ doc.addImage('./img/ubuntu.jpg','JPG',10,8,30,30)
 ```html
 
 <button id="btnPDF">PDF</button>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
 <script>
 document.getElementById('btnPDF').onclick =()=>{
-    console.log('ola');
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF({ unit: 'mm', format: 'a4' });
     doc.setFillColor(240,240,240);
@@ -187,11 +184,9 @@ document.getElementById('btnPDF').onclick =()=>{
     doc.setTextColor('#444');
     doc.setTextColor(50);
     doc.text('Facture',158,40); // text diago
-
     doc.output('dataurlnewwindow'); // différents: data url new window
     //doc.save(`document.pdf`)
 }
-
 </script>
 ```
 ## 8 - Ajouter une Font
