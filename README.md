@@ -98,7 +98,7 @@ document.getElementById('btnPDF').onclick =()=>{
     doc.setTextColor('#444');
     doc.text('Facture',158,40); 
     doc.output('dataurlnewwindow'); // data url new window
-    //pdf.save(`document.pdf`)
+    //doc.save(`document.pdf`)
 }
 </script>
 ```
@@ -153,7 +153,7 @@ document.getElementById('btnPDF').onclick =()=>{
     doc.text('Facture',158,40); // text diago
 
     doc.output('dataurlnewwindow'); // différents: data url new window
-    //pdf.save(`document.pdf`)
+    //doc.save(`document.pdf`)
 }
 </script>
 ```
@@ -161,7 +161,7 @@ document.getElementById('btnPDF').onclick =()=>{
 ## 6 - Ajouter une image
 (path,X,Y,largeur,hauteur)
 ```js
-pdf.addImage('./img/ubuntu.jpg','JPG',10,8,30,30)
+doc.addImage('./img/ubuntu.jpg','JPG',10,8,30,30)
 ```
 [doc](https://artskydj.github.io/jsPDF/docs/module-addImage.html)
 
@@ -189,7 +189,7 @@ document.getElementById('btnPDF').onclick =()=>{
     doc.text('Facture',158,40); // text diago
 
     doc.output('dataurlnewwindow'); // différents: data url new window
-    //pdf.save(`document.pdf`)
+    //doc.save(`document.pdf`)
 }
 
 </script>
@@ -200,11 +200,11 @@ Ajouter la font Ubuntu
 type = normal, bold , italic
 
 ```js
-pdf.addFont('./font/Ubuntu-Regular.ttf','Ubuntu-Regular','normal');
+doc.addFont('./font/Ubuntu-Regular.ttf','Ubuntu-Regular','normal');
 ```
 Selectionner la font à utiliser
 ```js
-pdf.setFont('Ubuntu-Regular')
+doc.setFont('Ubuntu-Regular')
 ```
 
 ## Ressources et documentation officielle :
