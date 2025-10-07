@@ -101,7 +101,6 @@ document.getElementById('btnPDF').onclick =()=>{
     doc.output('dataurlnewwindow'); // data url new window
     //pdf.save(`document.pdf`)
 }
-
 </script>
 ```
 
