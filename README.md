@@ -183,8 +183,8 @@ document.getElementById('btnPDF').onclick =()=>{
     doc.setFontSize(40);
     doc.setTextColor('#444');
     doc.setTextColor(50);
-    doc.text('Facture',158,40); // text diago
-    doc.output('dataurlnewwindow'); // différents: data url new window
+    doc.text('Facture',158,40); 
+    doc.output('dataurlnewwindow'); 
     //doc.save(`document.pdf`)
 }
 </script>
