@@ -89,19 +89,15 @@ doc.save(`document.pdf`)
 
 ```html
 <button id="btnPDF">PDF</button>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
 <script>
 document.getElementById('btnPDF').onclick =()=>{
     console.log('ola');
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF({ unit: 'mm', format: 'a4' });
-    
     doc.setFontSize(40);
     doc.setTextColor('#444');
     doc.text('Facture',158,40); 
-
     doc.output('dataurlnewwindow'); // data url new window
     //pdf.save(`document.pdf`)
 }
