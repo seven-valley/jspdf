@@ -2,7 +2,11 @@
 
 <img src="./img/logo.png" width="300">
 
-## Mise en place de jsPDF
+_Installer le plugin Live server sur vs code_
+  
+https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
+
+## 1 - Mise en place de jsPDF
 
 ### :one: Importer le CDN de jsPDF
 ```html
@@ -17,7 +21,7 @@
 document.getElementById('btnPDF').onclick =()=>{
     // code ici
 }
-<script>
+</script>
 ```
 
 ### :three: Importer jsPDF
@@ -37,7 +41,7 @@ document.getElementById('btnPDF').onclick =()=>{
 ```
 ### :five: Changer les valeurs par défault dans le constructeur
 ```js
-const doc = new jsPDF( orientation: 'p',unit: 'mm', format: 'a4');
+const doc = new jsPDF({orientation: 'p',unit: 'mm', format: 'a4'});
 ```
 |les termes| les valeurs par default|les valeurs|
 |---|---|---|
@@ -45,18 +49,19 @@ const doc = new jsPDF( orientation: 'p',unit: 'mm', format: 'a4');
 |unit| **mm**|Unité de mesure pour le coordonnées en X et Y ainsi que les dimmensions. Les valeurs possibles sont "**pt**" (points), "**mm**", "**cm**", "**m**", "**in**" ou "**px**".|
 |format| **a4** | Les valeurs possibles sont  a0 - a10, b0 - b10, c0 - c10, dl, letter, government-letter, legal, junior-legal, ledger, tabloid, credit-card|
 
-## Mise en place du texte
+## 2 - Mise en place du texte
 
 ### Définir la taille de la police de caractère ou "font"
 ```js
 doc.setFontSize(40);
 ```
+
 ### Définir la couleur du texte
-en Hexadécimal
+En Hexadécimal
 ```js
 doc.setTextColor('#444');
 ```
-en RGBA
+En RGBA
 ```js
 doc.setTextColor(68,68,68);
 ```
@@ -79,7 +84,134 @@ Télécharger :
 doc.save(`document.pdf`)
 ```
 
-## Code complet 
+## 3- Code complet pour un "Hello world"
+<code>demo1.html</code>
+
+```html
+<button id="btnPDF">PDF</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+document.getElementById('btnPDF').onclick =()=>{
+    console.log('ola');
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+    
+    doc.setFontSize(40);
+    doc.setTextColor('#444');
+    doc.text('Facture',158,40); 
+
+    doc.output('dataurlnewwindow'); // data url new window
+    //pdf.save(`document.pdf`)
+}
+
+</script>
+```
+
+## 4 - Ajouter une forme
+- Choisir une couleur pour la forme
+
+```js
+pdf.setFillColor(233);
+```
+ou
+```js
+pdf.setFillColor(233,233,233);
+```
+ou
+```js
+pdf.setFillColor('#e9e9e9');
+```
+-----------------------------------
+- Dessiner un rectangle
+(X,Y,largeur,hauteur,remplissage) 
+- remplissage : "F" = fill (rempli)
+- remplissage : "S" = stroke (mettre un cadre)
+- remplissage : "FD" =  (mettre un cadre et remplir)
+
+```js
+pdf.rect(40,100,100,10,"F");
+```
+[doc](https://artskydj.github.io/jsPDF/docs/jsPDF.html#rect)
+
+## 5 - Code complet pour un "Hello world" avec création d'une forme
+<code>demo2.html</code>
+
+```html
+
+<button id="btnPDF">PDF</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+document.getElementById('btnPDF').onclick =()=>{
+    console.log('ola');
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+    //-------------------------------
+    doc.setFillColor(240,240,240);
+    doc.rect(0, 0, 210, 44, 'F');
+    //-------------------------------
+    doc.setFontSize(40);
+    doc.setTextColor('#444');
+    doc.setTextColor(50);
+    doc.text('Facture',158,40); // text diago
+
+    doc.output('dataurlnewwindow'); // différents: data url new window
+    //pdf.save(`document.pdf`)
+}
+</script>
+```
+
+## 6 - Ajouter une image
+(path,X,Y,largeur,hauteur)
+```js
+pdf.addImage('./img/ubuntu.jpg','JPG',10,8,30,30)
+```
+[doc](https://artskydj.github.io/jsPDF/docs/module-addImage.html)
+
+
+## 7 - Code complet pour un "Hello world" avec une image
+```html
+
+<button id="btnPDF">PDF</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+document.getElementById('btnPDF').onclick =()=>{
+    console.log('ola');
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+    doc.setFillColor(240,240,240);
+    doc.rect(0, 0, 210, 44, 'F');
+    //-------------------------------
+    doc.addImage('./img/ubuntu.jpg','JPG',10,8,30,30)
+    //-------------------------------
+    doc.setFontSize(40);
+    doc.setTextColor('#444');
+    doc.setTextColor(50);
+    doc.text('Facture',158,40); // text diago
+
+    doc.output('dataurlnewwindow'); // différents: data url new window
+    //pdf.save(`document.pdf`)
+}
+
+</script>
+```
+## 8 - Ajouter une Font
+Ajouter la font Ubuntu
+(path,nom de la font,type)
+type = normal, bold , italic
+
+```js
+pdf.addFont('./font/Ubuntu-Regular.ttf','Ubuntu-Regular','normal');
+```
+Selectionner la font à utiliser
+```js
+pdf.setFont('Ubuntu-Regular')
+```
 
 ## Ressources et documentation officielle :
 
