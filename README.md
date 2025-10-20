@@ -202,6 +202,27 @@ Selectionner la font à utiliser
 doc.setFont('Ubuntu-Regular')
 ```
 
+## 9 - Code complet avec une nouvelle font
+```js
+document.getElementById('btnPDF').onclick =()=>{
+    console.log('ola');
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    //-------------------------------------------
+    pdf.addFont('./font/Ubuntu-Regular.ttf','Ubuntu-Regular','normal');
+    pdf.setFont('Ubuntu-Regular')
+    //-------------------------------------------
+    doc.setFillColor(240,240,240);
+    doc.rect(0, 0, 210, 44, 'F');
+    doc.addImage('./img/ubuntu.jpg','JPG',10,8,30,30)
+    doc.setFontSize(40);
+    doc.setTextColor('#444');
+    doc.setTextColor(50);
+    doc.text('Facture',158,40); // text diago
+    doc.output('dataurlnewwindow'); 
+}
+```
+
 ## Ressources et documentation officielle :
 
 - https://github.com/parallax/jsPDF
