@@ -81,7 +81,7 @@ doc.output('dataurlnewwindow'); //  data url new window
 ```
 Télécharger :
 ```js
-doc.save(`document.pdf`)
+doc.save(`document.pdf`);
 ```
 
 ## 3- Code complet pour un "Hello world"
@@ -98,7 +98,7 @@ document.getElementById('btnPDF').onclick =()=>{
     doc.setTextColor('#444');
     doc.text('Facture',158,40); 
     doc.output('dataurlnewwindow'); // data url new window
-    //doc.save(`document.pdf`)
+    //doc.save(`document.pdf`);
 }
 </script>
 ```
@@ -153,7 +153,7 @@ document.getElementById('btnPDF').onclick =()=>{
     doc.text('Facture',158,40); 
 
     doc.output('dataurlnewwindow'); // différents: data url new window
-    //doc.save(`document.pdf`)
+    //doc.save(`document.pdf`);
 }
 </script>
 ```
@@ -178,14 +178,14 @@ document.getElementById('btnPDF').onclick =()=>{
     doc.setFillColor(240,240,240);
     doc.rect(0, 0, 210, 44, 'F');
     //-------------------------------
-    doc.addImage('./img/ubuntu.jpg','JPG',10,8,30,30)
+    doc.addImage('./img/ubuntu.jpg','JPG',10,8,30,30);
     //-------------------------------
     doc.setFontSize(40);
     doc.setTextColor('#444');
     doc.setTextColor(50);
     doc.text('Facture',158,40); 
     doc.output('dataurlnewwindow'); 
-    //doc.save(`document.pdf`)
+    //doc.save(`document.pdf`);
 }
 </script>
 ```
@@ -199,7 +199,7 @@ doc.addFont('./font/Ubuntu-Regular.ttf','Ubuntu-Regular','normal');
 ```
 Selectionner la font à utiliser
 ```js
-doc.setFont('Ubuntu-Regular')
+doc.setFont('Ubuntu-Regular');
 ```
 
 ## 9 - Code complet avec une nouvelle font
@@ -209,12 +209,12 @@ document.getElementById('btnPDF').onclick =()=>{
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
     //-------------------------------------------
-    pdf.addFont('./font/Ubuntu-Regular.ttf','Ubuntu-Regular','normal');
-    pdf.setFont('Ubuntu-Regular')
+    doc.addFont('./font/Ubuntu-Regular.ttf','Ubuntu-Regular','normal');
+    doc.setFont('Ubuntu-Regular');
     //-------------------------------------------
     doc.setFillColor(240,240,240);
     doc.rect(0, 0, 210, 44, 'F');
-    doc.addImage('./img/ubuntu.jpg','JPG',10,8,30,30)
+    doc.addImage('./img/ubuntu.jpg','JPG',10,8,30,30);
     doc.setFontSize(40);
     doc.setTextColor('#444');
     doc.setTextColor(50);
