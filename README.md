@@ -141,7 +141,6 @@ doc.rect(40,100,100,10,"F");
 <script>
 const { jsPDF } = window.jspdf;
 document.getElementById('btnPDF').onclick =()=>{
-    console.log('ola');
     const doc = new jsPDF({ unit: 'mm', format: 'a4' });
     //-------------------------------
     doc.setFillColor(240,240,240);
@@ -205,8 +204,6 @@ doc.setFont('Ubuntu-Regular');
 ```js
 const { jsPDF } = window.jspdf;
 document.getElementById('btnPDF').onclick =()=>{
-    console.log('ola');
-   
     const doc = new jsPDF();
     //-------------------------------------------
     doc.addFont('./font/Ubuntu-Regular.ttf','Ubuntu-Regular','normal');
