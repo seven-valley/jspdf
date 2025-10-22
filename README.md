@@ -224,6 +224,11 @@ document.getElementById('btnPDF').onclick =()=>{
 ```
 
 ## 10 Mise en place de auto-table
+le cdn :
+```html
+<script src="https://cdn.jsdelivr.net/npm/jspdf-autotable"></script>
+```
+
 ```js
 doc.autoTable({
     const headers = [["ID", "Nom", "Email", "Âge"]];
@@ -235,7 +240,7 @@ doc.autoTable({
     startY: 30, // position du tableau
     head: headers,
     body: data,
-    theme: 'grid', // styles: 'striped', 'grid', 'plain'
+    theme: 'striped', // styles: 'striped', 'grid', 'plain'
     styles: {
         fontSize: 12,
         cellPadding: 4
