@@ -266,7 +266,7 @@ doc.autoTable( {
     margin: {
     left: 153,
     },
-    body: [ ttc],
+    body: [ [ttc]],
     bodyStyles:{  halign: 'right' ,textColor:'#3c3c3c',fillColor:'#ccc'  }
 });
 ```
