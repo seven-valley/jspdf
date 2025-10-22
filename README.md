@@ -258,21 +258,17 @@ doc.autoTable({
 
 ## 11 Mise en place de auto-table pour aligner les totaux vers la droite
 
-
 ```js
-    doc.autoTable( {
-        startY: 110,
-        tableWidth:24,
-        margin: {
-        left: 153,
-        },
-
-        body: [
-        [2000],
-        ],
-        bodyStyles:{  halign: 'right' ,textColor:'#3c3c3c',fillColor:'#ccc'  }
-
-    })
+const ttc=2400;
+doc.autoTable( {
+    startY: 110,
+    tableWidth:24,
+    margin: {
+    left: 153,
+    },
+    body: [ ttc],
+    bodyStyles:{  halign: 'right' ,textColor:'#3c3c3c',fillColor:'#ccc'  }
+});
 ```
 
 ## Ressources et documentation officielle :
