@@ -1,0 +1,40 @@
+
+<button id="btnPDF">PDF</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+document.getElementById('btnPDF').onclick =()=>{
+    console.log('ola');
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF({ unit: 'mm', format: 'a4' });
+  
+
+
+    //---------------------------------
+    pdf.addFont('./font/Ubuntu-Regular.ttf','Ubuntu-Regular','normal');
+    pdf.setFont('Ubuntu-Regular')
+    //---------------------------------
+    //pdf.setFillColor('#ccc');
+    pdf.setFillColor(240,240,240);
+    pdf.rect(0, 0, 210, 44, 'F');
+    
+    pdf.addImage('./img/ubuntu.jpg','JPG',10,8,30,30)
+
+    pdf.setFontSize(40);
+    pdf.setTextColor('#444');
+    pdf.setTextColor(50);
+    pdf.text('Facture',158,40); // text diago
+
+    pdf.setFillColor(233);
+    pdf.rect(40,100,100,10,"FD");
+    pdf.setFillColor(246);
+    pdf.rect(40,110,100,10,"FD");
+
+    pdf.output('dataurlnewwindow'); // différents: data url new window
+    //pdf.save(`document.pdf`)
+}
+
+</script>
+
+ 

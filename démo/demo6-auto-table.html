@@ -1,0 +1,25 @@
+<button id="btnPDF">PDF</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf-autotable"></script>
+<script>
+  const { jsPDF } = window.jspdf;
+  document.getElementById("btnPDF").onclick = () => {
+    console.log("ola");
+
+    const doc = new jsPDF({ unit: "mm", format: "a4" });
+    //-------------------------------------------
+    const ttc = 2400;
+    doc.autoTable({
+      startY: 110,
+      tableWidth: 24,
+      margin: {
+        left: 153,
+      },
+      body: [[ttc]],
+      bodyStyles: { halign: "right", textColor: "#3c3c3c", fillColor: "#ccc" },
+    });
+
+    doc.output("dataurlnewwindow");
+  };
+</script>

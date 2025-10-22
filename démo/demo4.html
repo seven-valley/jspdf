@@ -1,0 +1,26 @@
+
+<button id="btnPDF">PDF</button>
+
+ <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+
+<script>
+const { jsPDF } = window.jspdf;
+document.getElementById('btnPDF').onclick =()=>{
+    const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+    //-------------------------------------------
+    doc.addFont('./font/Ubuntu-Regular.ttf','Ubuntu-Regular','normal');
+    doc.setFont('Ubuntu-Regular')
+    //-------------------------------------------
+    doc.setFillColor(240,240,240);
+    doc.rect(0, 0, 210, 44, 'F');
+    doc.addImage('./img/ubuntu.jpg','JPG',10,8,30,30)
+    doc.setFontSize(40);
+    doc.setTextColor('#444');
+    doc.setTextColor(50);
+    doc.text('Facture',158,40); 
+    doc.output('dataurlnewwindow'); 
+}
+
+</script>
+
+ 

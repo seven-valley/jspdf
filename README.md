@@ -26,16 +26,14 @@ document.getElementById('btnPDF').onclick =()=>{
 
 ### :three: Importer jsPDF
 ```js
-document.getElementById('btnPDF').onclick =()=>{
-    // on importe jsPDF pour pouvoir l'utiliser
-    const { jsPDF } = window.jspdf;
-}
+// on importe jsPDF pour pouvoir l'utiliser
+const { jsPDF } = window.jspdf;
 ```
 
 ### :four: Création de l'objet jsPDF
 ```js
+const { jsPDF } = window.jspdf;
 document.getElementById('btnPDF').onclick =()=>{
-    const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
 }
 ```
@@ -91,8 +89,8 @@ doc.save(`document.pdf`);
 <button id="btnPDF">PDF</button>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>
+const { jsPDF } = window.jspdf;
 document.getElementById('btnPDF').onclick =()=>{
-    const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
     doc.setFontSize(40);
     doc.setTextColor('#444');
@@ -139,9 +137,9 @@ doc.rect(40,100,100,10,"F");
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 <script>
+const { jsPDF } = window.jspdf;
 document.getElementById('btnPDF').onclick =()=>{
     console.log('ola');
-    const { jsPDF } = window.jspdf;
     const doc = new jsPDF({ unit: 'mm', format: 'a4' });
     //-------------------------------
     doc.setFillColor(240,240,240);
@@ -172,8 +170,8 @@ doc.addImage('./img/ubuntu.jpg','JPG',10,8,30,30)
 <button id="btnPDF">PDF</button>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>
+const { jsPDF } = window.jspdf;
 document.getElementById('btnPDF').onclick =()=>{
-    const { jsPDF } = window.jspdf;
     const doc = new jsPDF({ unit: 'mm', format: 'a4' });
     doc.setFillColor(240,240,240);
     doc.rect(0, 0, 210, 44, 'F');
@@ -204,9 +202,10 @@ doc.setFont('Ubuntu-Regular');
 
 ## 9 - Code complet avec une nouvelle font
 ```js
+const { jsPDF } = window.jspdf;
 document.getElementById('btnPDF').onclick =()=>{
     console.log('ola');
-    const { jsPDF } = window.jspdf;
+   
     const doc = new jsPDF();
     //-------------------------------------------
     doc.addFont('./font/Ubuntu-Regular.ttf','Ubuntu-Regular','normal');

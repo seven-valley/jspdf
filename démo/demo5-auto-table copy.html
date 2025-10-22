@@ -1,0 +1,44 @@
+
+<button id="btnPDF">PDF</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf-autotable"></script>
+<script>
+const { jsPDF } = window.jspdf;
+document.getElementById('btnPDF').onclick =()=>{
+    console.log('ola');
+    
+    const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+    //-------------------------------------------
+      const headers = [["ID", "Nom", "Email", "Âge"]];
+      const data = [
+        [1, "Alice Dupont", "alice@example.com", 28],
+        [2, "Bob Martin", "bob@example.com", 35],
+        [3, "Charlie Durand", "charlie@example.com", 42],
+      ];
+
+      // AutoTable
+      doc.autoTable({
+        startY: 30, // position du tableau
+        head: headers,
+        body: data,
+        theme: 'striped', // styles: 'striped', 'grid', 'plain'
+        styles: {
+          fontSize: 12,
+          cellPadding: 4
+        },
+        headStyles: {
+          fillColor: [22, 160, 133], // vert
+          textColor: 255,
+          halign: 'center'
+        },
+        bodyStyles: {
+          halign: 'left'
+        }
+      });
+    doc.output('dataurlnewwindow'); 
+}
+
+</script>
+
+ 
