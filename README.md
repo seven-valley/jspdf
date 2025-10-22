@@ -230,13 +230,13 @@ le cdn :
 ```
 
 ```js
+const headers = [["ID", "Nom", "Email", "Âge"]];
+const data = [
+    [1, "Alice Dupont", "alice@example.com", 28],
+    [2, "Bob Martin", "bob@example.com", 35],
+    [3, "Charlie Durand", "charlie@example.com", 42],
+];
 doc.autoTable({
-    const headers = [["ID", "Nom", "Email", "Âge"]];
-    const data = [
-        [1, "Alice Dupont", "alice@example.com", 28],
-        [2, "Bob Martin", "bob@example.com", 35],
-        [3, "Charlie Durand", "charlie@example.com", 42],
-    ];
     startY: 30, // position du tableau
     head: headers,
     body: data,
