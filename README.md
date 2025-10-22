@@ -223,7 +223,53 @@ document.getElementById('btnPDF').onclick =()=>{
 }
 ```
 
-## Ressources et documentation officielle :
+## 10 Mise en place de auto-table
+```js
+doc.autoTable({
+    const headers = [["ID", "Nom", "Email", "Âge"]];
+    const data = [
+        [1, "Alice Dupont", "alice@example.com", 28],
+        [2, "Bob Martin", "bob@example.com", 35],
+        [3, "Charlie Durand", "charlie@example.com", 42],
+    ];
+    startY: 30, // position du tableau
+    head: headers,
+    body: data,
+    theme: 'grid', // styles: 'striped', 'grid', 'plain'
+    styles: {
+        fontSize: 12,
+        cellPadding: 4
+    },
+    headStyles: {
+        fillColor: [22, 160, 133], // vert
+        textColor: 255,
+        halign: 'center'
+    },
+    bodyStyles: {
+        halign: 'left'
+    }
+});
+```
 
+## 11 Mise en place de auto-table pour aligner les totaux vers la droite
+
+
+```js
+    doc.autoTable( {
+        startY: 110,
+        tableWidth:24,
+        margin: {
+        left: 153,
+        },
+
+        body: [
+        [2000],
+        ],
+        bodyStyles:{  halign: 'right' ,textColor:'#3c3c3c',fillColor:'#ccc'  }
+
+    })
+```
+
+## Ressources et documentation officielle :
 - https://github.com/parallax/jsPDF
 - https://artskydj.github.io/jsPDF/docs/jsPDF.html
