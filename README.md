@@ -151,7 +151,6 @@ document.getElementById('btnPDF').onclick =()=>{
     doc.setTextColor('#444');
     doc.setTextColor(50);
     doc.text('Facture',158,40); 
-
     doc.output('dataurlnewwindow'); //  data url new window
     //doc.save(`document.pdf`);
 }
